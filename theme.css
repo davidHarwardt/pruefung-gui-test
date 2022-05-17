@@ -1,0 +1,28 @@
+:root
+{
+    /* monokai colors */
+    --bg-main:      #222222;
+    --fg-main:      #f7f1ff;
+
+    --bg-sec:       #272727;
+    --fg-sec:       #69676c;
+
+    --bg-tert:       #393939;
+    --fg-tert:       #504f50;
+
+    --color-red:    #d6577b;
+    --color-green:  #7bd88f;
+    --color-yellow: #fce566;
+    --color-orange: #fd9353;
+    --color-purple: #948ae3;
+    --color-blue:   #5ad4e6;
+
+
+    /* padding */
+    --padding-extra-small: 0.25rem;
+    --padding-small: 0.35rem;
+    --padding-normal: 0.75rem;
+    --padding-large: 1rem;
+
+    --room-width: 15rem;
+}

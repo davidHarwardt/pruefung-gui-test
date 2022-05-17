@@ -146,7 +146,7 @@ body
 
 .time-table-background
 {
-    margin-top: var(--room-descr-height);
+    margin-top: calc(var(--room-descr-height) + var(--padding-small));
 }
 
 .time-section
@@ -251,5 +251,5 @@ body
     height: 1rem;
 }
 
-.block { background-color: var(--color-red); opacity: 0.5; margin: 0.5rem; }
+.block { background-color: var(--color-blue); opacity: 0.5; margin: 0.5rem; }
 .span-2 { grid-row: span 2; }
