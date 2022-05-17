@@ -1,0 +1,168 @@
+:root
+{
+    /* monokai colors */
+    --bg-main:      #222222;
+    --fg-main:      #f7f1ff;
+
+    --bg-sec:       #272727;
+    --fg-sec:       #69676c;
+
+    --bg-tert:       #393939;
+    --fg-tert:       #504f50;
+
+    --color-red:    #d6577b;
+    --color-green:  #7bd88f;
+    --color-yellow: #fce566;
+    --color-orange: #fd9353;
+    --color-purple: #948ae3;
+    --color-blue:   #5ad4e6;
+
+
+    /* padding */
+    --padding-small: 0.35rem;
+    --padding-normal: 0.75rem;
+    --padding-large: 1rem;
+}
+
+body
+{
+    margin: 0;
+    font-family: "Consolas", Arial, Helvetica, sans-serif;
+
+    background-color: var(--bg-sec);
+    color: var(--fg-main);
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.container
+{
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
+}
+
+.body
+{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0.25rem;
+}
+
+.body>* { background-color: var(--bg-main); }
+
+/* title bar */
+.title-bar
+{
+    user-select: none;
+    padding: var(--padding-small);
+    height: 1rem;
+    background-color: var(--bg-sec);
+}
+
+/* stacks */
+.zstack
+{
+    position: relative;
+    width: 100%;
+}
+
+.zstack>*
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* modals */
+.modal-container
+{
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+}
+
+.modal
+{
+    padding: var(--padding-normal) var(--padding-large);
+    margin: var(--padding-normal);
+    background-color: var(--color-orange);
+    color: var(--bg-sec);
+}
+
+/* exams */
+.exam
+{
+    background-color: var(--bg-sec);
+
+    padding: var(--padding-normal);
+    margin: var(--padding-normal);
+
+    width: 10rem;
+
+    user-select: none;
+    cursor: grab;
+}
+
+.exam-subject { padding-top: var(--padding-normal); }
+.exam-title { font-size: 1.25rem; font-weight: bold; }
+
+
+/* time table */
+.time-table-container
+{
+    position: relative;
+
+    --hour-height: 10rem;
+}
+
+.time-section
+{
+    padding: var(--padding-normal);
+    position: relative;
+    user-select: none;
+
+    margin-bottom: calc(var(--hour-height) - 1em - var(--padding-normal));
+}
+
+.time-section::before
+{
+    content: "";
+    position: absolute;
+    display: block;
+
+    --line-offset: 4rem;
+
+    width: calc(100% - var(--line-offset) - 1rem);
+    height: 0.125rem;
+    background-color: var(--fg-tert);
+    
+    top: 50%;
+    transform: translate(0, -50%);
+    left: var(--line-offset);
+}
+
+.time-spacer
+{
+    height: 5rem;
+}
+
+.time-table-rooms-container
+{
+    padding-top: 1.75rem;
+    padding-left: 5rem;
+    padding-right: 1.5rem;
+    box-sizing: border-box;
+
+    display: grid;
+    --gap-width: 0.5rem;
+
+    gap: var(--gap-width);
+    grid-template-rows: repeat(5, calc(var(--hour-height) + var(--gap-width)));
+}
+
+.block { background-color: var(--color-red); opacity: 0.5; }
